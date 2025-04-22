@@ -48,7 +48,7 @@ class SimpleRNN:
         self.hidden_size = hidden_size
         self.learning_rate = learning_rate
 
-    def feed_forward(self, inputs: ndarray) -> OutputLayer:
+    def predict(self, inputs: ndarray) -> OutputLayer:
         """
         Perform forward propagation to process a sequence of inputs to compute predictions at each time step.
 
@@ -99,5 +99,5 @@ class SimpleRNN:
         """
         for epoch in range(epochs):
             for idx, inp in enumerate(inputs):
-                self.feed_forward(inp)
+                self.predict(inp)
                 self.backpropagation(expected[idx])
